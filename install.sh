@@ -18,3 +18,6 @@ echo "Set up vim, Vundle and install plugins"
 cd ~/.vim
 ./InstallVundle
 vim +PluginInstall +qall
+
+# Install Powerline fonts
+./InstallPowerlineFonts
