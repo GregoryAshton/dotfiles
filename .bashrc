@@ -35,3 +35,6 @@ ssh-add ~/.ssh/id_rsa_github
 
 PYTHONPATH="/home/greg/neutron_star_modelling/"
 export PYTHONPATH
+
+# Turn of askpass on fedora
+unset SSH_ASKPASS
