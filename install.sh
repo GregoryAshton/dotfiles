@@ -9,6 +9,12 @@ export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
 # Bunch of symlinks
-
 ln -sfv "$DOTFILES_DIR/.bashrc" ~
 ln -sfv "$DOTFILES_DIR/.gitconfig" ~
+ln -sfv "$DOTFILES_DIR/.vim" ~
+
+# Install Vundle
+echo "Set up vim, Vundle and install plugins"
+cd ~/.vim
+./InstallVundle
+vim +PluginInstall +qall
