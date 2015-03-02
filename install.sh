@@ -29,6 +29,13 @@ else
     ln -sfv "$DOTFILES_DIR/.screenrc" ~
 fi
 
+if [ -f ~/.dir_colors ]; then
+    echo "WARNING: ~/.dir_colors already exists: no action taken"
+else
+    ln -sfv "$DOTFILES_DIR/.dir_colors" ~
+fi
+
+
 # vim setup
 if [ -d ~/.vim ]; then
   echo "WARNING: ~/.vim already exist: no action taken"
