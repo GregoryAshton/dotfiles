@@ -23,6 +23,12 @@ else
     ln -sfv "$DOTFILES_DIR/.gitconfig" ~
 fi
 
+if [ -f ~/.screenrc ]; then
+    echo "WARNING: ~/.screenrc already exists: no action taken"
+else
+    ln -sfv "$DOTFILES_DIR/.screenrc" ~
+fi
+
 # vim setup
 if [ -d ~/.vim ]; then
   echo "WARNING: ~/.vim already exist: no action taken"

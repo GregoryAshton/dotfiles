@@ -1,0 +1,23 @@
+# Don't display the copyright page
+startup_message off
+
+# Status bar
+caption always "%{-b ..}%-w%{+b ..}[[%n%f*%t]]%{-}%+w"
+
+bind
+split -v
+screen bash
+split
+focus
+screen bash
+focus
+screen vim
+
+# navigating regions with Ctrl-arrows
+bindkey "^h" focus left
+bindkey "^l" focus right
+bindkey "^j" focus up
+bindkey "^k" focus down
+
+# mouse tracking allows to switch region focus by clicking
+mousetrack on
