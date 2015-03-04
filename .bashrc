@@ -27,7 +27,6 @@ alias long-lines="ls *.tex |xargs style -l 29 | \
                   subsubsection\|%' -v"
 eval `dircolors ~/.dir_colors`
 alias ls='ls --color -h --group-directories-first'
-LS_COLORS='di=0;35' ; export LS_COLORS
 source ~/Dropbox/eyeP/ssh-aliases
 
 set -o vi # Vim style command prompt

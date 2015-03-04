@@ -94,6 +94,7 @@ EXEC 01;32
 .py 01;31
 .ipynb 01;31
 .tex 01;31
+.html 01;31
 
  # archives or compressed (bright red)
 .tar 01;31
@@ -114,7 +115,7 @@ EXEC 01;32
 .tiff 01;35
 .svg 01;35
 .svgz 01;35
-.png 01;36
+.png 01;35
 .pdf 01;35
 
 # Data 
