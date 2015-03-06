@@ -4,6 +4,4 @@
 [core]
 	editor = vim
 [color]
-    diff = auto
-    status = auto
-    branch = auto
+    ui = auto
