@@ -18,6 +18,15 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
 fi
 
+# Enable programmable completion features
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
 # Alias
 alias ?="git status -uno"
 alias gdiff="git diff"
@@ -66,5 +75,4 @@ unset SSH_ASKPASS
 # Manually add ssh key on fedora
 #eval `ssh-agent -s`
 #ssh-add ~/.ssh/id_rsa_github
-
 
