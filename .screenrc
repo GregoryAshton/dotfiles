@@ -21,3 +21,7 @@ bindkey "^k" focus down
 
 # mouse tracking allows to switch region focus by clicking
 mousetrack on
+
+# Scrollback
+defscrollback 10000
+termcapinfo xterm* ti@:te@
