@@ -4,14 +4,15 @@ startup_message off
 # Status bar
 caption always "%{-b ..}%-w%{+b ..}[[%n%f*%t]]%{-}%+w"
 
-bind
+# Start up
+#bind
 split -v
 screen bash
-split
+#split
 focus
 screen bash
 focus
-screen vim
+#screen vim
 
 # navigating regions with Ctrl-arrows
 bindkey "^h" focus left
