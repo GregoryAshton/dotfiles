@@ -63,6 +63,7 @@ export PYTHONPATH
 PATH=:$PATH:/home/greg/Programs/Academic-Writing-Check
 PATH=:$PATH:/home/greg/Programs/batchgit
 PATH=:$PATH:/home/greg/Programs/GitCheck
+PATH=:$PATH:/home/greg/GetTrainTimes
 
 # Add lalapps
 . /home/greg/lalsuite-install/etc/lalapps-user-env.sh
