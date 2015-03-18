@@ -11,7 +11,6 @@ c.InteractiveShellApp.exec_files = []
 c.InteractiveShell.autoindent = True
 c.InteractiveShell.colors = 'Linux'
 c.InteractiveShell.confirm_exit = False
-c.InteractiveShell.deep_reload = True
 c.InteractiveShell.editor = 'vim'
 c.InteractiveShell.xmode = 'Context'
 
