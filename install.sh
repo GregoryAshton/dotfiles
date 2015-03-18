@@ -52,4 +52,9 @@ else
   ./InstallPowerlineFonts
 fi
 
-
+# ipython setup
+if [ -f ~/.ipython/profile_default/ipython_config.py ]; then
+    echo "WARNING: .ipython/profile_default/ipython_config.py already exists: no action taken"
+else
+    ln -sfv "$DOTFILES_DIR/ipython_config.py" ~/.ipython/profile_default
+fi
