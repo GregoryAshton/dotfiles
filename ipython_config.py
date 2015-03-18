@@ -25,3 +25,5 @@ c.PrefilterManager.multi_line_specials = True
 c.AliasManager.user_aliases = [
          ('la', 'ls -al')
          ]
+
+c.NotebookApp.browser = u'/usr/bin/google-chrome %s --new-window'
