@@ -36,12 +36,14 @@ alias long-lines="ls *.tex |xargs style -l 29 | \
                   subsubsection\|%' -v"
 eval `dircolors ~/.dir_colors`
 alias ls='ls --color -h --group-directories-first'
+e() { evince "$@" 2> /dev/null & }
 source ~/Dropbox/eyeP/ssh-aliases
 
 set -o vi # Vim style command prompt
 complete -f -X '*.@(pdf|blg|bbl|aux)' vim 
 complete -f -X '*.@(pdf|blg|bbl|aux)' gvim
 complete -f -X '!*.@(tex)' texworks
+complete -f -X '!*.@(pdf)' e
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
