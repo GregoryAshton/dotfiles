@@ -113,12 +113,14 @@ endif
 highlight clear SpellBad
 highlight SpellBad term=bold cterm=bold ctermfg=White gui=standout guifg=green 
 
-" git-gutter color hack
+" git-gutter
 highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green guifg=green
 highlight GitGutterChange ctermfg=yellow guifg=yellow
 highlight GitGutterDelete ctermfg=red guifg=red
 highlight GitGutterChangeDelete ctermfg=yellow guifg=yellow
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 
 " vim-diminactive setup
 let g:diminactive_use_colorcolumn = 0
