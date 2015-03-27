@@ -3,6 +3,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return 
 
+export TERM=xterm-256color
+
 # History
 shopt -s histappend # append to the history file, dont' overwrite it
 HISTCONTROL=ignoreboth # ignore duplicated lines

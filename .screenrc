@@ -1,6 +1,8 @@
 # Don't display the copyright page
 startup_message off
 
+term screen-256color
+
 # Status bar
 caption always "%{-b ..}%-w%{+b ..}[[%n%f*%t]]%{-}%+w"
 
@@ -24,5 +26,5 @@ bindkey "^k" focus down
 mousetrack on
 
 # Scrollback
-defscrollback 10000
+defscrollback 1000
 termcapinfo xterm* ti@:te@
