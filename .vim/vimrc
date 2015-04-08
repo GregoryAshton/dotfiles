@@ -19,6 +19,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'vasconcelloslf/vim-interestingwords'
 Plugin 'ntpeters/vim-better-whitespace'  
 Plugin 'blueyed/vim-diminactive'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
