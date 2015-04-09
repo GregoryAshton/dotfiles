@@ -68,7 +68,7 @@ PATH=:$PATH:/home/greg/Programs/Academic-Writing-Check
 PATH=:$PATH:/home/greg/Programs/batchgit
 PATH=:$PATH:/home/greg/Programs/GitCheck
 PATH=:$PATH:/home/greg/GetTrainTimes
-PATH=:$PATH:/home/greg/lsg
+PATH=:$PATH:/home/greg/Scripts
 
 # Add lalapps
 . /home/greg/lalsuite-install/etc/lalapps-user-env.sh
