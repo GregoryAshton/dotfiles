@@ -1,0 +1,9 @@
+#!/bin/sh
+
+file="./bundle/syntastic/syntax_checkers/tex/checkwriting.vim"
+if [ ! -f $file ] ; then
+    echo "Copying checkwriting to syntastic subdir"
+    cp checkwriting.vim $file
+else
+    echo "Checkwriting already installed"
+fi
