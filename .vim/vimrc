@@ -17,9 +17,10 @@ Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vasconcelloslf/vim-interestingwords'
-Plugin 'ntpeters/vim-better-whitespace'  
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'blueyed/vim-diminactive'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -77,9 +78,9 @@ set guioptions-=m "get rid of menu
 " CtrlP search options
 let g:ctrlp_working_path_mode = 'cra'
 
-" Set font 
+" Set font
 if has("gui_running")
-  if has("gui_gtk2") && hostname == "lenovofedora" 
+  if has("gui_gtk2") && hostname == "lenovofedora"
     set guifont=Inconsolata\ 10
   elseif has("gui_gtk2")
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
@@ -93,13 +94,13 @@ se t_Co=256
 set background=dark
 colorscheme solarized
 
-" vim-airline 
+" vim-airline
 let g:airline_theme = 'solarized'
 set laststatus=2
-let g:airline_extensions#tabline#enabled = 0
-let g:airline_extensions#tagbar#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
-" To install the pre-patched font find the relevant ttf file with Powerline 
+" To install the pre-patched font find the relevant ttf file with Powerline
 " then do:
 " sudo gnome-font-viewer Ubuntu\ Mono\ derivative\ Powerline.ttf
 " to install the font. Finally change the gnome-terminal to accept this.
@@ -110,9 +111,9 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-" Change error color 
+" Change error color
 highlight clear SpellBad
-highlight SpellBad term=bold cterm=bold ctermfg=White gui=standout guifg=green 
+highlight SpellBad term=bold cterm=bold ctermfg=White gui=standout guifg=green
 
 " git-gutter
 highlight clear SignColumn
