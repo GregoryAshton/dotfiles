@@ -4,6 +4,7 @@
 [ -z "$PS1" ] && return 
 
 export TERM=xterm-256color
+export EDITOR=vim
 
 # History
 shopt -s histappend # append to the history file, dont' overwrite it
