@@ -35,6 +35,13 @@ else
     ln -sfv "$DOTFILES_DIR/.dir_colors" ~
 fi
 
+if [ -f ~/.batchgitrc ]; then
+    echo "WARNING: ~/.batchgitrc already exists: no action taken"
+else
+    ln -sfv "$DOTFILES_DIR/.batchgitrc" ~
+fi
+
+
 
 # vim setup
 if [ -d ~/.vim ]; then
