@@ -151,7 +151,11 @@ let g:syntastic_aggregate_errors = 1
 
 " ------------------------------ LATEX ----------------------------------------
 " Compile main Latex file in directory
-map <F2> :! grep "documentclass" *.tex -l \| xargs pdflatex <CR>
+command Pdf  execute "! grep 'documentclass' *.tex -l \| xargs pdflatex"
+map <F2> :Pdf<CR>
+" Run bibtex
+command Bib execute "! ls *.aux \| xargs bibtex"
+map <F3> : Bib<CR>
 " Open pdf file
 nmap <F12> :call system('evince ' . expand('%:r') . '.pdf') <CR>
 " Latex alias
