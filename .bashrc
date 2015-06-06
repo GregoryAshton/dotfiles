@@ -31,6 +31,7 @@ if ! shopt -oq posix; then
 fi
 
 # Alias
+alias fin="notify-send 'Finished'"
 alias ?="git status -uno"
 alias gdiff="git diff"
 alias serve='bundle exec jekyll serve'
