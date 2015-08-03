@@ -175,6 +175,8 @@ omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
 autocmd FileType tex vnoremap % :s#^#\%#<cr>:noh<cr>
 autocmd FileType tex vnoremap -% :s#^\%##<cr>:noh<cr>
+" Countr occurances of word
+autocmd FileType tex nnoremap <leader>c *'' :%s...gn<CR> 
 
 " --------------------------------- PYTHON ------------------------------------
 " Python alias
