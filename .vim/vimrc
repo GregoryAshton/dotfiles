@@ -173,6 +173,8 @@ set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*out,*ipynb,*log,*hdf5
 map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
 omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
+autocmd FileType tex vnoremap % :s#^#\%#<cr>:noh<cr>
+autocmd FileType tex vnoremap -% :s#^\%##<cr>:noh<cr>
 
 " --------------------------------- PYTHON ------------------------------------
 " Python alias
