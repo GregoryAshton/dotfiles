@@ -60,19 +60,19 @@ else
 fi
 
 # jupyter setup
-if [ -f ~/.jupyter/profile_default/jupyter_config.py ]; then
-    echo "WARNING: .jupyter/profile_default/jupyter_config.py already exists: no action taken"
+if [ -f ~/.jupyter/jupyter_config.py ]; then
+    echo "WARNING: .jupyter/jupyter_config.py already exists: no action taken"
 else
-    ln -sfv "$DOTFILES_DIR/jupyter_config.py" ~/.jupyter/profile_default
+    ln -sfv "$DOTFILES_DIR/jupyter_config.py" ~/.jupyter/jupyter_config.py
 fi
 
 if [ -f ~/.jupyter/profile_default/jupyter_nbconvert_config.py ]; then
     echo "WARNING: .jupyter/profile_default/jupyter_nbconvert_config.py already exists: no action taken"
 else
-    ln -sfv "$DOTFILES_DIR/jupyter_nbconvert_config.py" ~/.jupyter/profile_default
+    ln -sfv "$DOTFILES_DIR/jupyter_nbconvert_config.py" ~/.jupyter/jupyter_nbconvert_config.py
 fi
 if [ -f ~/.jupyter/hidecode.tplx ]; then
     echo "WARNING: .jupyter/hidecode.tplx already exists: no action taken"
 else
-    ln -sfv "$DOTFILES_DIR/hidecode.tplx" ~/.jupyter
+    ln -sfv "$DOTFILES_DIR/hidecode.tplx" ~/.jupyte/hidecode.tplx
 fi
