@@ -59,6 +59,7 @@ else
   ./InstallPowerlineFonts
 fi
 
+
 # jupyter setup
 if [ -f ~/.jupyter/jupyter_config.py ]; then
     echo "WARNING: .jupyter/jupyter_config.py already exists: no action taken"
@@ -66,7 +67,7 @@ else
     ln -sfv "$DOTFILES_DIR/jupyter_config.py" ~/.jupyter/jupyter_config.py
 fi
 
-if [ -f ~/.jupyter/profile_default/jupyter_nbconvert_config.py ]; then
+if [ -f ~/.jupyter/jupyter_nbconvert_config.py ]; then
     echo "WARNING: .jupyter/profile_default/jupyter_nbconvert_config.py already exists: no action taken"
 else
     ln -sfv "$DOTFILES_DIR/jupyter_nbconvert_config.py" ~/.jupyter/jupyter_nbconvert_config.py
@@ -74,5 +75,15 @@ fi
 if [ -f ~/.jupyter/hidecode.tplx ]; then
     echo "WARNING: .jupyter/hidecode.tplx already exists: no action taken"
 else
-    ln -sfv "$DOTFILES_DIR/hidecode.tplx" ~/.jupyte/hidecode.tplx
+    ln -sfv "$DOTFILES_DIR/hidecode.tplx" ~/.jupyter/hidecode.tplx
 fi
+
+
+# matplotlib setup
+if [ -f ~/.config/matplotlib/stylelib/paper.mplstyle ]; then
+    echo "WARNING: .config/matplotlib/stylib/paper.mplstyle already exists: no action taken"
+else
+    mkdir -p ~/.config/matplotlib/stylelib
+    ln -sfv "$DOTFILES_DIR/paper.mplstyle" ~/.config/matplotlib/stylelib/paper.mplstyle
+fi
+
