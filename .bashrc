@@ -82,3 +82,6 @@ unset SSH_ASKPASS
 #eval `ssh-agent -s`
 #ssh-add ~/.ssh/id_rsa_github
 
+xmodmap ~/.Xmodmap
+
+eval "$(thefuck --alias)"
