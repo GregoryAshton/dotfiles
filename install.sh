@@ -78,6 +78,14 @@ else
     ln -sfv "$DOTFILES_DIR/hidecode.tplx" ~/.jupyter/hidecode.tplx
 fi
 
+# ipython setup
+ipython profile create default # Generate the file structure (if it doesn't exist)
+if [ -f ~/.ipython/profile_default/startup/ipython_imports.py ]; then
+    echo "WARNING: .ipython/profile_default/startup/ipython_imports.py already exists: no action taken"
+else
+    ln -sfv "$DOTFILES_DIR/ipython_imports.py" ~/.ipython/profile_default/startup/ipython_imports.py
+fi
+
 
 # matplotlib setup
 if [ -f ~/.config/matplotlib/stylelib/paper.mplstyle ]; then
