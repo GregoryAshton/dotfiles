@@ -71,7 +71,8 @@ PATH=:$PATH:/home/greg/Programs/batchgit
 PATH=:$PATH:/home/greg/Scripts
 
 # Add lalapps
-. /home/greg/lalsuite-install/etc/lalapps-user-env.sh
+#. /home/greg/lalsuite-install/etc/lalapps-user-env.sh
+
 # ATNF database
 export PSRCAT_FILE='mydir/psrcat/psrcat.db'
 
@@ -81,7 +82,5 @@ unset SSH_ASKPASS
 # Manually add ssh key on fedora
 #eval `ssh-agent -s`
 #ssh-add ~/.ssh/id_rsa_github
-
-xmodmap ~/.Xmodmap
 
 eval "$(thefuck --alias)"
