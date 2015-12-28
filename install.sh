@@ -79,7 +79,9 @@ else
 fi
 
 # ipython setup
-ipython profile create default # Generate the file structure (if it doesn't exist)
+if ! type "$ipython" > /dev/null; then
+    ipython profile create default # Generate the file structure (if it doesn't exist)
+fi
 if [ -f ~/.ipython/profile_default/startup/ipython_imports.py ]; then
     echo "WARNING: .ipython/profile_default/startup/ipython_imports.py already exists: no action taken"
 else
