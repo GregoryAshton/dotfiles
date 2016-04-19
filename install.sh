@@ -103,3 +103,10 @@ else
     ln -sfv "$DOTFILES_DIR/paper.mplstyle" ~/.config/matplotlib/stylelib/paper.mplstyle
 fi
 
+if [ -f ~/.config/matplotlib/stylelib/thesis.mplstyle ]; then
+    echo "WARNING: .config/matplotlib/stylib/thesis.mplstyle already exists: no action taken"
+else
+    mkdir -p ~/.config/matplotlib/stylelib
+    ln -sfv "$DOTFILES_DIR/thesis.mplstyle" ~/.config/matplotlib/stylelib/thesis.mplstyle
+fi
+
