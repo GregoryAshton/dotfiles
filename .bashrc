@@ -43,6 +43,9 @@ alias ls='ls --color -h --group-directories-first'
 e() { evince "$@" 2> /dev/null & }
 source ~/Dropbox/eyeP/ssh-aliases
 
+alias spell='aspell --add-tex-command="citep op" --add-tex-command="citet op" --add-tex-command="eqref op" -t -c'
+complete -f -X '!*tex' spell
+
 set -o vi # Vim style command prompt
 complete -f -X '*.@(pdf|blg|bbl|aux)' vim 
 complete -f -X '*.@(pdf|blg|bbl|aux)' gvim
