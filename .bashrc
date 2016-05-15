@@ -45,6 +45,8 @@ source ~/Dropbox/eyeP/ssh-aliases
 
 alias spell='aspell --add-tex-command="citep op" --add-tex-command="citet op" --add-tex-command="eqref op" -t -c'
 complete -f -X '!*tex' spell
+alias dups='checkwriting --no-passive --no-strunk --no-weasel'
+complete -f -X '!*tex' dups
 
 set -o vi # Vim style command prompt
 complete -f -X '*.@(pdf|blg|bbl|aux)' vim 
