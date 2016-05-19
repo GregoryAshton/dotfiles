@@ -89,3 +89,6 @@ unset SSH_ASKPASS
 #ssh-add ~/.ssh/id_rsa_github
 
 eval "$(thefuck --alias)"
+
+# added by Miniconda2 3.19.0 installer
+export PATH="/home/greg/Programs/miniconda2/bin:$PATH"
