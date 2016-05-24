@@ -21,6 +21,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'blueyed/vim-diminactive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -92,7 +93,7 @@ endif
 " Set colorscheme
 se t_Co=256
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 
 " vim-airline
 let g:airline_theme = 'solarized'
@@ -148,6 +149,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_tex_checkers=['checkwriting'] ", 'lacheck', 'chktex']
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_python_checkers=['flake8']
 
 " ------------------------------ LATEX ----------------------------------------
 " Compile main Latex file in directory
@@ -182,6 +184,6 @@ autocmd FileType tex nnoremap <leader>c *'' :%s...gn<CR>
 " Python alias
 let @n = 'v%S)inp.array'
 let @s = 'ebvf)S]'
-nnoremap <leader>p iimport matplotlib.pyplot as plt <CR>import numpy as np<Esc>
+nnoremap <leader>p iimport matplotlib.pyplot as plt<CR>import numpy as np<Esc>
 
 
