@@ -67,6 +67,10 @@ else
     ln -sfv "$DOTFILES_DIR/jupyter_notebook_config.py" ~/.jupyter/jupyter_notebook_config.py
 fi
 
+if [ ! -d ~/,jupyter ]; then
+    mkdir ~/.jupyter
+fi
+
 if [ -f ~/.jupyter/jupyter_config.py ]; then
     echo "WARNING: .jupyter/jupyter_config.py already exists: no action taken"
 else
