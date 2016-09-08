@@ -63,6 +63,7 @@ fi
 PYTHONPATH=""
 PPDIRS=("/home/greg/neutron_star_modelling"
         "/home/greg/timing-noise/Scripts"
+        "/home/greg/timing-noise/GlitchSearch"
         "/home/greg/timing-noise/AnalysisLyneObservations/EmCeeInvestigation"
         )
 for dir in "${PPDIRS[@]}"; do
@@ -76,7 +77,7 @@ PATH=:$PATH:/home/greg/Programs/batchgit
 PATH=:$PATH:/home/greg/Scripts
 
 # Add lalapps
-#. /home/greg/lalsuite-install/etc/lalapps-user-env.sh
+. /home/greg/lalsuite-install/etc/lalapps-user-env.sh
 
 # ATNF database
 export PSRCAT_FILE='mydir/psrcat/psrcat.db'
@@ -93,3 +94,6 @@ export PATH="/home/greg/Programs/miniconda2/bin:$PATH"
 
 # added by Miniconda2 4.0.5 installer
 export PATH="/home/greg/miniconda2/bin:$PATH"
+
+# added by Anaconda2 4.1.1 installer
+export PATH="/home/greg/anaconda2/bin:$PATH"
