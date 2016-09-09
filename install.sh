@@ -24,6 +24,12 @@ else
 fi
 
 if [ -f ~/.screenrc ]; then
+    echo "WARNING: ~/.tmux.conf already exists: no action taken"
+else
+    ln -sfv "$DOTFILES_DIR/.tmux.conf" ~
+fi
+
+if [ -f ~/.screenrc ]; then
     echo "WARNING: ~/.screenrc already exists: no action taken"
 else
     ln -sfv "$DOTFILES_DIR/.screenrc" ~

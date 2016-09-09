@@ -54,6 +54,9 @@ complete -f -X '*.@(pdf|blg|bbl|aux)' gvim
 complete -f -X '!*.@(tex)' texworks
 complete -f -X '!*.@(pdf)' e
 
+# alias to start tmux with two pans
+alias s='tmux new-session \; split-window -h \;'
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
