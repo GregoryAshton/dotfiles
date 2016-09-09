@@ -185,5 +185,6 @@ autocmd FileType tex nnoremap <leader>c *'' :%s...gn<CR>
 let @n = 'v%S)inp.array'
 let @s = 'ebvf)S]'
 nnoremap <leader>p iimport matplotlib.pyplot as plt<CR>import numpy as np<Esc>
+nnoremap <leader>I iimport IPython; IPython.embed()<Esc>
 
 
