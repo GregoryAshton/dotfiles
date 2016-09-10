@@ -23,7 +23,7 @@ else
     ln -sfv "$DOTFILES_DIR/.gitconfig" ~
 fi
 
-if [ -f ~/.screenrc ]; then
+if [ -f ~/.tmux.conf ]; then
     echo "WARNING: ~/.tmux.conf already exists: no action taken"
 else
     ln -sfv "$DOTFILES_DIR/.tmux.conf" ~
