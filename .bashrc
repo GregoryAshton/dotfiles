@@ -100,3 +100,5 @@ export PATH="/home/greg/miniconda2/bin:$PATH"
 
 # added by Anaconda2 4.1.1 installer
 export PATH="/home/greg/anaconda2/bin:$PATH"
+
+export MPLCONFIGDIR=/home/greg/.config/matplotlib
