@@ -66,7 +66,6 @@ fi
 PYTHONPATH=""
 PPDIRS=("/home/greg/neutron_star_modelling"
         "/home/greg/timing-noise/Scripts"
-        "/home/greg/timing-noise/GlitchSearch"
         "/home/greg/timing-noise/AnalysisLyneObservations/EmCeeInvestigation"
         )
 for dir in "${PPDIRS[@]}"; do
