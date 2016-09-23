@@ -57,6 +57,8 @@ complete -f -X '!*.@(pdf)' e
 # alias to start tmux with two pans
 alias s='tmux new-session \; split-window -h \;'
 
+alias calc='jupyter qtconsole --no-banner &'
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
