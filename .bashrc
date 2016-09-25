@@ -1,7 +1,7 @@
 # .bashrc executed by bash(1) for non-login shells.
 
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return 
+[ -z "$PS1" ] && return
 
 export TERM=xterm-256color
 export EDITOR=vim
@@ -30,7 +30,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Alias
+# Add alias's
+source ~/Dropbox/eyeP/ssh-aliases
 alias fin="notify-send 'Finished'"
 alias ?="git status -uno"
 alias gdiff="git diff"
@@ -40,31 +41,23 @@ alias long-lines="ls *.tex |xargs style -l 29 | \
                   subsubsection\|%' -v"
 eval `dircolors ~/.dir_colors`
 alias ls='ls --color -h --group-directories-first'
-e() { evince "$@" 2> /dev/null & }
-source ~/Dropbox/eyeP/ssh-aliases
-
+alias s='tmux new-session \; split-window -h \;'
+alias ligo-proxy='ligo-proxy-init gregory.ashton'
+alias atlas7='gsissh -X atlas7.atlas.aei.uni-hannover.de'
+alias calc='jupyter qtconsole --no-banner --no-confirm-exit &'
 alias spell='aspell --add-tex-command="citep op" --add-tex-command="citet op" --add-tex-command="eqref op" -t -c'
-complete -f -X '!*tex' spell
 alias dups='checkwriting --no-passive --no-strunk --no-weasel'
-complete -f -X '!*tex' dups
 
-set -o vi # Vim style command prompt
-complete -f -X '*.@(pdf|blg|bbl|aux)' vim 
+# Tab completion
+complete -f -X '!*tex' spell
+complete -f -X '!*tex' dups
+complete -f -X '*.@(pdf|blg|bbl|aux)' vim
 complete -f -X '*.@(pdf|blg|bbl|aux)' gvim
 complete -f -X '!*.@(tex)' texworks
 complete -f -X '!*.@(pdf)' e
 
-# alias to start tmux with two pans
-alias s='tmux new-session \; split-window -h \;'
 
-alias calc='jupyter qtconsole --no-banner --no-confirm-exit &'
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-
-# ----------- PYTHON PATH --------------
+# Python path
 PYTHONPATH=""
 PPDIRS=("/home/greg/neutron_star_modelling"
         "/home/greg/timing-noise/Scripts"
@@ -75,10 +68,15 @@ for dir in "${PPDIRS[@]}"; do
 done
 export PYTHONPATH
 
-# ----------- PATH ---------------------
+# Path
 PATH=:$PATH:/home/greg/Programs/Academic-Writing-Check
 PATH=:$PATH:/home/greg/Programs/batchgit
 PATH=:$PATH:/home/greg/Scripts
+
+# Misc
+e() { evince "$@" 2> /dev/null & }
+set -o vi # Vim style command prompt
+export MPLCONFIGDIR=/home/greg/.config/matplotlib
 
 # Add lalapps
 . /home/greg/lalsuite-install/etc/lalapps-user-env.sh
@@ -86,20 +84,6 @@ PATH=:$PATH:/home/greg/Scripts
 # ATNF database
 export PSRCAT_FILE='mydir/psrcat/psrcat.db'
 
-# Turn of askpass on fedora
-unset SSH_ASKPASS
-
-# Manually add ssh key on fedora
-#eval `ssh-agent -s`
-#ssh-add ~/.ssh/id_rsa_github
-
-# added by Miniconda2 3.19.0 installer
-export PATH="/home/greg/Programs/miniconda2/bin:$PATH"
-
-# added by Miniconda2 4.0.5 installer
-export PATH="/home/greg/miniconda2/bin:$PATH"
-
 # added by Anaconda2 4.1.1 installer
 export PATH="/home/greg/anaconda2/bin:$PATH"
 
-export MPLCONFIGDIR=/home/greg/.config/matplotlib
