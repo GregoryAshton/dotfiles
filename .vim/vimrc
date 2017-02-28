@@ -22,6 +22,7 @@ Plugin 'blueyed/vim-diminactive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mgedmin/pythonhelper'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -97,9 +98,10 @@ set background=dark
 
 " vim-airline
 let g:airline_theme = 'solarized'
+let g:airline_section_c = '%{TagInStatusLine()}'
 set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 0
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 " To install the pre-patched font find the relevant ttf file with Powerline
 " then do:
@@ -141,6 +143,7 @@ endif
 " Syntastic setup
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline=%<%f\ %h%m%r\ %1*%{TagInStatusLine()}%*%=%-14.(%l,%c%V%)\ %P
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
