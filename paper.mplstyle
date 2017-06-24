@@ -1,10 +1,10 @@
 figure.figsize: 3.4, 2.5
 figure.facecolor: w
 
-axes.labelsize: 8.8
-axes.titlesize: 6.6
-xtick.labelsize: 8
-ytick.labelsize: 8
+axes.labelsize: 8
+axes.titlesize: 8
+xtick.labelsize: 6
+ytick.labelsize: 6
 legend.fontsize: 8
 font.size: 6
 
@@ -21,8 +21,8 @@ xtick.minor.visible: True
 ytick.minor.size: 1.5
 ytick.minor.visible: True
 
-xtick.major.pad: 5.6
-ytick.major.pad: 5.6
+xtick.major.pad: 2.5
+ytick.major.pad: 2.5
 
 pdf.compression: 9
 savefig.format: png
