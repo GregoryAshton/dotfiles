@@ -14,7 +14,10 @@ HISTFILESIZE=500
 
 # Prompt
 force_color_prompt=yes
-PS1="\W:\[\033[01;31m\] \$\[\033[00m\] "
+parse_git_branch() {
+         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+     }
+ PS1="\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\]:\[\033[01;31m\] \$\[\033[00m\] "
 
 if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
