@@ -57,6 +57,7 @@ alias tempo2='/home/greg/Programs/TEMPO2_RTD/bin/tempo2 -h'
 alias reset_screen='xrandr -s 0'
 alias turn_on_monitor='xrandr --output DP3-3 --left-of eDP1'
 alias AEI_VPN='sudo openvpn --config ~/grasht@ahgate1.aei.uni-hannover.de.ovpn'
+alias ecp_shortcut='ecp-cookie-init LIGO.ORG https://versions.ligo.org/git gregory.ashton'
 
 copy_from_atlas() {
     gsiscp atlas8.atlas.aei.uni-hannover.de:/home/gregory.ashton/$1 $2
