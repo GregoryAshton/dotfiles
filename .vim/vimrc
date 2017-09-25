@@ -34,7 +34,7 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
-set number
+set number relativenumber
 "set smartindent
 set tabstop=4
 set shiftwidth=4
@@ -173,7 +173,7 @@ nnoremap <leader>g i\begin{figure}[htb]<CR>
                    \\label{fig:}<CR>
                    \\end{figure}<Esc>?{<CR>3na
 " Ignored file types
-set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*out,*ipynb,*log,*hdf5
+set wildignore+=*.pdf,*.aux,*.bbl,*.blg,*.pyc,*.so,*.zip,*ipynb,*log,*hdf5
 " Latex formatting
 map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
 omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
