@@ -52,9 +52,7 @@ alias atlas9='gsissh -X atlas9.atlas.aei.uni-hannover.de'
 alias calc='jupyter qtconsole --no-banner --no-confirm-exit &'
 alias spell='aspell --add-tex-command="citep op" --add-tex-command="citet op" --add-tex-command="eqref op" -t -c'
 alias dups='checkwriting --no-passive --no-strunk --no-weasel'
-alias teamspeak='/home/greg/Programs/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh'
 alias pissh='ssh pi@`nmap -sn 192.168.0.0/24 | grep "raspberrypi" | sed "s/^.*(//;s/)$//"`'
-alias tempo2='/home/greg/Programs/TEMPO2_RTD/bin/tempo2 -h'
 alias reset_screen='xrandr -s 0'
 alias turn_on_monitor='xrandr --output DP3-3 --left-of eDP1'
 alias AEI_VPN='sudo openvpn --config ~/grasht@ahgate1.aei.uni-hannover.de.ovpn'
@@ -79,10 +77,10 @@ complete -f -X '!*.@(pdf)' e
 
 # Python path
 PYTHONPATH=""
-PPDIRS=("/home/greg/neutron_star_modelling"
-        "/home/greg/Scripts"
-        "/home/greg/timing-noise/Scripts"
-        "/home/greg/timing-noise/AnalysisLyneObservations/EmCeeInvestigation"
+PPDIRS=("${HOME}/neutron_star_modelling"
+        "${HOME}/Scripts"
+        "${HOME}/timing-noise/Scripts"
+        "${HOME}/timing-noise/AnalysisLyneObservations/EmCeeInvestigation"
         )
 for dir in "${PPDIRS[@]}"; do
   PYTHONPATH=$PYTHONPATH:$dir
@@ -90,42 +88,26 @@ done
 export PYTHONPATH
 
 # Path
-PATH=:$PATH:/home/greg/Programs/Academic-Writing-Check
-PATH=:$PATH:/home/greg/Programs/batchgit
-PATH=:$PATH:/home/greg/Scripts
-
-PATH=:$PATH:/home/greg/Programs/todo.txt_cli-2.9
-alias t='todo.sh -d /home/greg/Programs/todo.txt_cli-2.9/todo.cfg'
-complete -F _todo t
+PATH=:$PATH:${HOME}/Programs/Academic-Writing-Check
+PATH=:$PATH:${HOME}/Programs/batchgit
+PATH=:$PATH:${HOME}/Scripts
 
 # Misc
 e() { evince "$@" 2> /dev/null & }
 set -o vi # Vim style command prompt
-export MPLCONFIGDIR=/home/greg/.config/matplotlib
+export MPLCONFIGDIR=${HOME}/.config/matplotlib
 
 # Add lalapps
-. /home/greg/lalsuite-install/etc/lalapps-user-env.sh
+. ${HOME}/lalsuite-install/etc/lalapps-user-env.sh
 
 # ATNF database
 export PSRCAT_FILE='mydir/psrcat/psrcat.db'
 
-# added by Anaconda2 4.1.1 installer
-export PATH="/home/greg/anaconda2/bin:$PATH"
+export PATH="${HOME}/anaconda2/bin:$PATH"
 
 function SFThist {
 lalapps_dumpSFT -H -i $1 | grep "epoch" | sed 's%^epoch:%%' | tr -d '[]' | sed -e 's/, 0//g' | hist -b 80
 }
 export -f SFThist
 
-. /home/greg/octapps/octapps-user-env.sh
-
-
-TEMPO2='/home/greg/Programs/TEMPO2_RTD'
-export TEMPO2
-PGPLOT_DIR='/home/greg/Programs/pgplot/'
-export PGPLOT_DIR
-
-export GLUE_LOCATION=/home/greg/glue
-if [ -f ${GLUE_LOCATION}/etc/glue-user-env.sh ] ; then
-    source ${GLUE_LOCATION}/etc/glue-user-env.sh
-fi
+# . ${HOME}/octapps/octapps-user-env.sh
