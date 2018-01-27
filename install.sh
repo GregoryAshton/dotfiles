@@ -29,12 +29,6 @@ else
     ln -sfv "$DOTFILES_DIR/.tmux.conf" ~
 fi
 
-if [ -f ~/.screenrc ]; then
-    echo "WARNING: ~/.screenrc already exists: no action taken"
-else
-    ln -sfv "$DOTFILES_DIR/.screenrc" ~
-fi
-
 if [ -f ~/.dir_colors ]; then
     echo "WARNING: ~/.dir_colors already exists: no action taken"
 else
@@ -65,34 +59,6 @@ else
   ./InstallPowerlineFonts
 fi
 
-
-# jupyter setup
-if [ -f ~/.jupyter/jupyter_notebook_config.py ]; then
-    echo "WARNING: .jupyter/jupyter_notebook_config.py already exists: no action taken"
-else
-    ln -sfv "$DOTFILES_DIR/jupyter_notebook_config.py" ~/.jupyter/jupyter_notebook_config.py
-fi
-
-if [ ! -d ~/,jupyter ]; then
-    mkdir ~/.jupyter
-fi
-
-if [ -f ~/.jupyter/jupyter_config.py ]; then
-    echo "WARNING: .jupyter/jupyter_config.py already exists: no action taken"
-else
-    ln -sfv "$DOTFILES_DIR/jupyter_config.py" ~/.jupyter/jupyter_config.py
-fi
-
-if [ -f ~/.jupyter/jupyter_nbconvert_config.py ]; then
-    echo "WARNING: .jupyter/profile_default/jupyter_nbconvert_config.py already exists: no action taken"
-else
-    ln -sfv "$DOTFILES_DIR/jupyter_nbconvert_config.py" ~/.jupyter/jupyter_nbconvert_config.py
-fi
-if [ -f ~/.jupyter/hidecode.tplx ]; then
-    echo "WARNING: .jupyter/hidecode.tplx already exists: no action taken"
-else
-    ln -sfv "$DOTFILES_DIR/hidecode.tplx" ~/.jupyter/hidecode.tplx
-fi
 
 # ipython setup
 if ! type "$ipython" > /dev/null; then
