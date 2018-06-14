@@ -49,6 +49,11 @@ alias ligo-proxy='ligo-proxy-init gregory.ashton'
 alias atlas7='gsissh -X atlas7.atlas.aei.uni-hannover.de'
 alias atlas8='gsissh -X atlas8.atlas.aei.uni-hannover.de'
 alias atlas9='gsissh -X atlas9.atlas.aei.uni-hannover.de'
+alias CIT_submit='gsissh -X ldas-grid.ligo.caltech.edu'
+alias pcdev1='gsissh -X ldas-pcdev1.ligo.caltech.edu'
+alias pcdev2='gsissh -X ldas-pcdev2.ligo.caltech.edu'
+alias pcdev3='gsissh -X ldas-pcdev3.ligo.caltech.edu'
+alias ozstar='ssh gashton@ozstar.swin.edu.au'
 alias calc='jupyter qtconsole --no-banner --no-confirm-exit &'
 alias spell='aspell --add-tex-command="citep op" --add-tex-command="citet op" --add-tex-command="eqref op" -t -c'
 alias dups='checkwriting --no-passive --no-strunk --no-weasel'
@@ -98,7 +103,7 @@ set -o vi # Vim style command prompt
 export MPLCONFIGDIR=${HOME}/.config/matplotlib
 
 # Add lalapps
-. ${HOME}/lalsuite-install/etc/lalapps-user-env.sh
+#. ${HOME}/lalsuite-install/etc/lalapps-user-env.sh
 
 # ATNF database
 export PSRCAT_FILE='mydir/psrcat/psrcat.db'
