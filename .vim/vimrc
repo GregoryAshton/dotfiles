@@ -23,6 +23,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mgedmin/pythonhelper'
+Plugin 'ambv/black'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -153,6 +154,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_tex_checkers=['checkwriting'] ", 'lacheck', 'chktex']
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501,E225'
 
 " ------------------------------ LATEX ----------------------------------------
 " Compile main Latex file in directory

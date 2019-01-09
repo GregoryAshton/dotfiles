@@ -19,6 +19,7 @@ parse_git_branch() {
      }
  PS1="\A \W\[\033[33m\]\$(parse_git_branch)\[\033[00m\]:\[\033[01;31m\] \$\[\033[00m\] "
 
+eval `dircolors ~/.dir_colors`
 if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
@@ -33,43 +34,49 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Add alias's
-source ~/Dropbox/eyeP/ssh-aliases
-alias fin="notify-send 'Finished'"
+# Git setup
 alias ?="git status -uno"
 alias gdiff="git diff"
-alias serve='bundle exec jekyll serve'
+
+# Latex setup
 alias long-lines="ls *.tex |xargs style -l 29 | \
                   grep 'equation\|align\|graphics\|section\|subsection\|\
                   subsubsection\|%' -v"
-eval `dircolors ~/.dir_colors`
-alias ls='ls --color -h --group-directories-first'
-alias s='tmux new-session \; split-window -h \;'
-alias ligo-proxy='ligo-proxy-init gregory.ashton'
-alias atlas7='gsissh -X atlas7.atlas.aei.uni-hannover.de'
-alias atlas8='gsissh -X atlas8.atlas.aei.uni-hannover.de'
-alias atlas9='gsissh -X atlas9.atlas.aei.uni-hannover.de'
-alias CIT_submit='gsissh -X ldas-grid.ligo.caltech.edu'
-alias pcdev1='gsissh -X ldas-pcdev1.ligo.caltech.edu'
-alias pcdev2='gsissh -X ldas-pcdev2.ligo.caltech.edu'
-alias pcdev3='gsissh -X ldas-pcdev3.ligo.caltech.edu'
-alias ozstar='ssh gashton@ozstar.swin.edu.au'
-alias calc='jupyter qtconsole --no-banner --no-confirm-exit &'
 alias spell='aspell --add-tex-command="citep op" --add-tex-command="citet op" --add-tex-command="eqref op" -t -c'
 alias dups='checkwriting --no-passive --no-strunk --no-weasel'
-alias pissh='ssh pi@`nmap -sn 192.168.0.0/24 | grep "raspberrypi" | sed "s/^.*(//;s/)$//"`'
-alias reset_screen='xrandr -s 0'
-alias turn_on_monitor='xrandr --output DP3-3 --left-of eDP1'
-alias AEI_VPN='sudo openvpn --config ~/grasht@ahgate1.aei.uni-hannover.de.ovpn'
+
+# Bash setup
+set -o vi # Vim style command prompt
+alias ls='ls --color -h --group-directories-first'
+
+# tmux setup
+alias s='tmux new-session \; split-window -h \;'
+
+# LDG setup
+alias ligo-proxy='ligo-proxy-init gregory.ashton'
 alias ecp_shortcut='ecp-cookie-init LIGO.ORG https://versions.ligo.org/git gregory.ashton'
 
-copy_from_atlas() {
-    gsiscp atlas7.atlas.aei.uni-hannover.de:/home/gregory.ashton/$1 $2
+function pcdev(){
+    gsissh ldas-pcdev$1.ligo.caltech.edu
+}
+
+copy_from_cit() {
+    gsiscp ldas-pcdev3.ligo.caltech.edu:/home/gregory.ashton/$1 $2
     }
 
-copy_to_atlas() {
-    gsiscp $1 atlas7.atlas.aei.uni-hannover.de:/home/gregory.ashton/
+
+# OzStar
+alias ozstar="ssh -X gashton@ozstar.swin.edu.au"
+
+
+function ozcp(){
+    scp gashton@ozstar.swin.edu.au:/fred/oz006/gashton/$1 .
     }
+
+function ozcpto(){
+    scp $1 gashton@ozstar.swin.edu.au:/fred/oz006/gashton/
+    }
+
 
 # Tab completion
 complete -f -X '!*tex' spell
@@ -81,15 +88,7 @@ complete -f -X '!*.@(pdf)' e
 
 
 # Python path
-PYTHONPATH=""
-PPDIRS=("${HOME}/neutron_star_modelling"
-        "${HOME}/Scripts"
-        "${HOME}/timing-noise/Scripts"
-        "${HOME}/timing-noise/AnalysisLyneObservations/EmCeeInvestigation"
-        )
-for dir in "${PPDIRS[@]}"; do
-  PYTHONPATH=$PYTHONPATH:$dir
-done
+PYTHONPATH="${HOME}/Scripts"
 export PYTHONPATH
 
 # Path
@@ -99,16 +98,7 @@ PATH=:$PATH:${HOME}/Scripts
 
 # Misc
 e() { evince "$@" 2> /dev/null & }
-set -o vi # Vim style command prompt
 export MPLCONFIGDIR=${HOME}/.config/matplotlib
-
-# Add lalapps
-#. ${HOME}/lalsuite-install/etc/lalapps-user-env.sh
-
-# ATNF database
-export PSRCAT_FILE='mydir/psrcat/psrcat.db'
-
-export PATH="${HOME}/anaconda2/bin:$PATH"
 
 function SFThist {
 lalapps_dumpSFT -H -i $1 | grep "epoch" | sed 's%^epoch:%%' | tr -d '[]' | sed -e 's/, 0//g' | hist -b 80
@@ -116,3 +106,10 @@ lalapps_dumpSFT -H -i $1 | grep "epoch" | sed 's%^epoch:%%' | tr -d '[]' | sed -
 export -f SFThist
 
 # . ${HOME}/octapps/octapps-user-env.sh
+
+# Py MultiNest setup
+export MKL_THREADING_LAYER=GNU
+export LD_LIBRARY_PATH=$HOME/Programs/MultiNest/lib
+
+# added by Miniconda3 installer
+export PATH="/home/user1/miniconda3/bin:$PATH"
