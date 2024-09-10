@@ -7,14 +7,11 @@
 # Get current dir (so run this script from anywhere)
 export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Update dotfiles itself first
-[ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
-
 # Setup symlinks - if they already exist just print a warning
-if [ -f ~/.bashrc ]; then
-    echo "WARNING: ~/.bashrc already exists: no action taken"
+if [ -f ~/.profile ]; then
+    echo "WARNING: ~/.profile already exists: no action taken"
 else
-    ln -sfv "$DOTFILES_DIR/bashrc" ~/.bashrc
+    ln -sfv "$DOTFILES_DIR/profile" ~/.profile
 fi
 
 if [ -f ~/.gitconfig ]; then
@@ -34,7 +31,6 @@ if [ -f ~/.dir_colors ]; then
 else
     ln -sfv "$DOTFILES_DIR/dir_colors" ~/.dir_colors
 fi
-
 
 # vim setup
 if [ -d ~/.vim ]; then

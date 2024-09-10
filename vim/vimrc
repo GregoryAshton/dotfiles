@@ -98,7 +98,7 @@ set background=dark
 
 " vim-airline
 let g:airline_theme = 'solarized'
-let g:airline_section_c = '%{TagInStatusLine()}'
+"let g:airline_section_c = '%{TagInStatusLine()}'
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tagbar#enabled = 0
@@ -108,11 +108,11 @@ let g:airline_powerline_fonts = 1
 " sudo gnome-font-viewer Ubuntu\ Mono\ derivative\ Powerline.ttf
 " to install the font. Finally change the gnome-terminal to accept this.
 
-if exists('+colorcolumn')
-  set colorcolumn=80
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
+"if exists('+colorcolumn')
+  "set colorcolumn=80
+"else
+  "au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+"endif
 
 " Change error color
 highlight clear SpellBad
